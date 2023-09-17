@@ -7,6 +7,8 @@ const _do_decrypt = function (encrypted, password) {
         mode: CryptoJS.mode.CBC,
         padding: CryptoJS.pad.Pkcs7
     });
+    // 解决问题:  Malformed UTF-8 data, 不知为何加上后, 无法正常解密
+    // decrypted_data = decrypted_data.toString().replace('\n','');
     return decrypted_data.toString(CryptoJS.enc.Utf8);
 };
 
@@ -31,13 +33,13 @@ const _click_handler = function (element) {
     try {
         decrypted = _do_decrypt(encrypted, password);
     } catch (err) {
-        console.error(err);
-        alert("Failed to decrypt.");
+      // 解密失败, 原因是: Malformed UTF-8 data
+        alert("密码错误!!");
         return;
     }
 
     if (!decrypted.includes("--- DON'T MODIFY THIS LINE ---")) {
-        alert("Incorrect password.");
+        alert("密码错误");
         return;
     }
 
