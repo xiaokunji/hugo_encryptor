@@ -1,0 +1,22 @@
+input.hugo-encryptor-input {
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+
+input.hugo-encryptor-button {
+  background-color: #4cafa0d4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+input.hugo-encryptor-button:hover {
+  background-color: #45a049;
+}

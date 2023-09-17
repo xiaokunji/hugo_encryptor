@@ -29,6 +29,10 @@
 
 把`hugo-encryptor.py` 文件复制到hugo的根目录下(和hugo的配置文件同一级目录)
 
+### 步骤五：复制 样式文件(可选)
+
+把`pwd.css` 文件复制到 `assets\css\extended` 目录下
+
 
 
 
