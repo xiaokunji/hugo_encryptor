@@ -25,6 +25,7 @@ your content
   <div class="hugo-encryptor-form">
     <input
       class="hugo-encryptor-input"
+      value='{{ .Site.Params.password}}'
       placeholder='{{ if eq .Site.Params.hugoEncryptorLanguage "en-us" }}Please input the password{{ else }}请输入密码{{ end }}'
     />
     <input
@@ -34,9 +35,12 @@ your content
       onclick="_click_handler(this)"
     />
   </div>
+  <!-- data-password="{{ .Get 0 }}" 取短代码入参  -->
+  <!-- data-password="{{ .Page.Params.password }}" 取文章 frontMatter的password字段  -->
+  <!-- data-password="{{ .Site.Params.password }}" 取 hugo配置文件的Params下的password字段  -->
   <div
     class="hugo-encryptor-cipher-text"
-    data-password="{{ .Get 0 }}"
+    data-password="{{ .Site.Params.password }}"
     style="display: none;"
   >
     <span style="display: none;">--- DON'T MODIFY THIS LINE ---</span>
